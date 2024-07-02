@@ -54,6 +54,5 @@ build/
 .idea/
 
 # Jest
-jest.config.js
 jest.setup.js
 jest.json

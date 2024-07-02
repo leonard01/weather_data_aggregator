@@ -27,3 +27,66 @@ A Node.js application that aggregates weather data from external APIs and provid
    git clone https://github.com/yourusername/weather-data-aggregator.git
    cd weather-data-aggregator
    ```
+
+2. Install Dependencies:
+
+```bash
+npm install
+```
+
+or
+
+```bash
+yarn install
+```
+
+3. Create a .env file in the root directory and add your configuration variables:
+
+PORT=3000
+REDIS_URL=redis://127.0.0.1:6379
+WEATHER_API_KEY=your_weather_api_key
+
+(goto https://www.weatherapi.com/ and sign up for free api key)
+
+#### Running the Application
+
+1. Ensure Redis Server is running:
+
+```bash
+redis-server
+```
+
+2. Start the application:
+
+```bash
+npm run dev
+```
+
+or
+
+```bash
+yarn dev
+```
+
+Server should now be running on http://localhost:3000.
+
+API Endpoints
+Get current weather:
+
+```bash
+GET /api/weather/{location}
+Example: GET /api/weather/London
+
+Get weather forecast:
+
+GET /api/weather/{location}/forecast/{days}
+Example: GET /api/weather/London/forecast/3
+```
+
+##### Tests
+
+There are several unit tests that can be ran without starting the server
+
+```bash
+npm run test
+```
